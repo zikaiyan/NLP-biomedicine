@@ -158,7 +158,7 @@ The result shows that the most frequent co-occurrence of biomedical entities wit
 
 The last figure shows the top 10 words with the most considerable cosine similarities to 'coronavirus.' It illustrates that the word 'virus' has the most considerable cosine similarity(about 0.45). The result is consistent with everyday cognition.
 
-![semantic_similarity](/Users/zekiyan/Library/CloudStorage/GoogleDrive-zettayan@gmail.com/My Drive/Portfolio/Projects/NLP-biomedicine/images/semantic_similarity.png)
+![semantic_similarity](images/semantic_similarity.png)
 
 ## Discussion
 
