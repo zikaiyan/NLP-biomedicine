@@ -70,7 +70,7 @@ Distributed word representation, usually obtained through calculation from large
 
 #### N-gram
 
-N-gram Language Modeling is to predict a target word by using n words from the previous context. If expressed in conditional probability, it can be written as `P(W{i} | W_{i-1}, W_{i-2}, …, W_{i-n+1})`.
+N-gram Language Modeling is to predict a target word by using n words from the previous context. If expressed in conditional probability, it can be written as $P(W{i} | W_{i-1}, W_{i-2}, …, W_{i-n+1})$.
 
 We first establish a training set and traverse the whole `test_sentence` Separating them into three groups of words, the first two as input and the last as the result of prediction. Then, encode each word and use numbers to represent the word. Only in this way can we pass in `nn.embedding` to get the word vector.
 
@@ -80,7 +80,7 @@ Lastly, we can get the predicted word as output and representation.
 
 #### Skip-gram
 
-In skip-gram, we use a central word to predict its context. If expressed in conditional probability, its `P(W_{c-m}, …, W_{c-1}, W_{x+1}, …, W_{c+m}|W_{c})`. First of all, we set the training parameters as: {`learning_rate = 0.05`, `batch_size = 128`, `total_steps = 1000000`, `display_step = 10000`, `evaluation_step = 100000`}.
+In skip-gram, we use a central word to predict its context. If expressed in conditional probability, its $P(W_{c-m}, …, W_{c-1}, W_{x+1}, …, W_{c+m}|W_{c})$. First of all, we set the training parameters as: {`learning_rate = 0.05`, `batch_size = 128`, `total_steps = 1000000`, `display_step = 10000`, `evaluation_step = 100000`}.
 
 Then, we set the evaluation parameters using five words: "disease," "virus," "symptoms," "coronavirus," "health," and "medical." Next, we set the Word2Vec Parameters to be: "`count = [('UNK', -1)]`" to replace rare words with UNK tokens. `min_occurrence = 1000` to retrieve the most 1000 words which have the most considerable occurrence frequency, and remove samples with less than `min_occurrence`, in this report, we set it as 10. "`word2id`" is a dictionary that assigns an id to each word. Finally, we can generate a training batch for the skip-gram model. "`skip_window = 3`" indicates the number of words to consider left and right, so the window size "span" is "`2\times skip_window + 1`". "embedding" is the embedding variable; each row represents a word embedding vector. The number of negative sampling to sample is defined as 64.
 
